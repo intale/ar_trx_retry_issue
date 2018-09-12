@@ -48,5 +48,5 @@ Do you see that redundant `COMMIT` statement? And, as a result, a warning from p
 
 That is it. By quickly inspecting the code, I concluded that it comes from the ActiveRecord(not from pg gem). It is 
 there a statements are prepared and finally executed with `ActiveRecord::ConnectionAdapters::PostgreSQLAdapter#exec_query`.
-Of source `#exec_query` itself is not a source of a problem - I didn't try to dig deeper. Ideas/suggestions/notices are welcome.
+Of course `#exec_query` itself is not a source of a problem - I didn't try to dig deeper. Ideas/suggestions/notices are welcome.
  
