@@ -1,0 +1,2 @@
+class SerializationTest < ApplicationRecord
+end

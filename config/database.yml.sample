@@ -1,0 +1,15 @@
+---
+development:
+  adapter: postgresql
+  prepared_statements: false
+  encoding: utf8
+  username: postgres
+  port: 5434
+  database: ar_trx_retry_issue_dev
+test:
+  adapter: postgresql
+  prepared_statements: false
+  encoding: utf8
+  username: postgres
+  port: 5434
+  database: ar_trx_retry_issue_test

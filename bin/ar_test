@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+#
+require File.expand_path('../../config/environment.rb', __FILE__)
+
+def subject
+  query_parts = []
+  callback = proc {|_, _, _, _, payload| query_parts << payload[:sql] unless payload[:name] == 'SCHEMA'}
+  ActiveSupport::Notifications.subscribed callback, 'sql.active_record' do
+    query
+  end
+  query_parts
+end
+
+def query
+  ActiveRecord::Base.transaction do
+    SerializationTest.where(value: 1).exists?
+    SerializationTest.create(value: 1)
+    sleep 1
+  end
+rescue => error
+  if error.message.index('could not serialize')
+    retry
+  end
+end
+
+pid = fork do
+  ActiveRecord::Base.transaction do
+    SerializationTest.where(value: 1).exists?
+    SerializationTest.create(value: 1)
+  end
+end
+
+puts *subject
+Process.waitpid(pid)
