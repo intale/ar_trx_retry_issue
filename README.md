@@ -1,5 +1,5 @@
 # ar_trx_retry_issue
-A project to demonstrate an issue when retrying transaction that failed due serialization error
+A project to demonstrate an issue that appears when retrying transaction that failed due serialization error 
 
 ### Project setup
 
