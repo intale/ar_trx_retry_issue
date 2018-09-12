@@ -7,7 +7,7 @@ A project to demonstrate an issue when retrying transaction that failed due seri
  - Run `bundle` command 
  - `cp config/database.yml.sample config/database.yml`
  - Change database.yml to match your pg setup. 
- - `rake db:create && rake db:migrate`\
+ - `rake db:create && rake db:migrate`
  - your `postgresql.conf` should have `default_transaction_isolation = 'serializable'`
  
 A version of postgresql used for tests is 10. OS is Ubuntu 18.04.
