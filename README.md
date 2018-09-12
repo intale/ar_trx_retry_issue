@@ -3,6 +3,8 @@ A project to demonstrate an issue that appears when retrying transaction that fa
 
 ### Project setup
 
+ - Rails version is 5.2.1
+ - Ruby version is 2.5.1
  - Clone project 
  - Run `bundle` command 
  - `cp config/database.yml.sample config/database.yml`
