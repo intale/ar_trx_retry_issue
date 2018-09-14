@@ -3,7 +3,7 @@ A project to demonstrate an issue that appears when retrying transaction that fa
 
 ### Project setup
 
- - Rails version is 5.2.1
+ - Rails version  - latest(6.0.0.alpha), taken from repo's master branch
  - Ruby version is 2.5.1
  - Clone project 
  - Run `bundle` command 
