@@ -25,6 +25,7 @@ end
 
 pid = fork do
   ActiveRecord::Base.transaction do
+    sleep 0.5
     SerializationTest.where(value: 1).exists?
     SerializationTest.create(value: 1)
   end
